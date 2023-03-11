@@ -1,4 +1,5 @@
-const btn = document.querySelector("[data-form-btn]");
+( () => {
+    const btn = document.querySelector("[data-form-btn]");
 /*
 //Arrow funtion o funciones anonimas son representadas con una =>
 btn.addEventListener("click", (evento) => {
@@ -21,16 +22,23 @@ const createTask = evento => {
 
     input.value= "";
     //backticks  | el ${} es una plantilla
+    taskContent = document.createElement("div");
+    taskContent.appendChild(checkComplete());
+    const titleTask = document.createElement("span");
+    titleTask.classList.add("task");
+    titleTask.innerText=value;
+    taskContent.appendChild(titleTask);
     const content = 
     `
-    <div>
-        <i class="far fa-check-square icon"></i>
+    
+        ${checkComplete()}
             <span class="task">${value}</span> 
-    </div>
+    
         <i class="fas fa-trash-alt trashIcon icon"></i>
     `;
 
-    task.innerHTML = content;
+    //task.innerHTML = content;
+    task.appendChild(taskContent);
     list.appendChild(task); //appendChild agrega un elemento hijo al padre
     console.log(content);
 
@@ -38,3 +46,20 @@ const createTask = evento => {
 
 
 btn.addEventListener('click', createTask);
+
+const checkComplete = () => {
+    const i = document.createElement ("i"); // Donde i es el elemento
+    i.classList.add("far", "fa-check-square", "icon"); 
+    i.addEventListener('click', completeTask); 
+    return i;
+};
+
+const completeTask = (event) =>{
+    const element = event.target;
+    element.classList.toggle('fas');
+    element.classList.toggle("completeIcon");
+    element.classList.remove ('far');
+
+    
+};
+})();
