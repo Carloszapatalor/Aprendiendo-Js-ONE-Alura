@@ -1,12 +1,13 @@
 class cuentaCorriente {
   numero;
-  #saldo;
   agencia;
+  #saldo;
 
   constructor() {
+    this.cliente = null;
     this.numero = "";
-    this.#saldo = 0;
     this.agencia = "";
+    this.#saldo = 0;
   }
 
   depositoCuenta(valor) {
@@ -23,6 +24,11 @@ class cuentaCorriente {
 
   consultarSaldo() {
     return this.#saldo;
+  }
+
+  trasnferirCuenta(valor,cuentaDestino){
+    this.retirarCuenta(valor);
+    cuentaDestino.depositoCuenta(valor);
   }
 }
 

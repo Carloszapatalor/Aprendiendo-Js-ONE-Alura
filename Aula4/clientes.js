@@ -4,5 +4,4 @@ class Clientes {
   rutCliente;
 }
 
-
 export default Clientes;
