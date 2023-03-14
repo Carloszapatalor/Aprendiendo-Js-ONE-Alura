@@ -19,26 +19,46 @@ class Clientes{
 
 class cuentaCorriente{
     numero;
-    saldo;
+    #saldo;
     agencia;
 
+    constructor(){
+        this.numero="";
+        this.#saldo=0;
+        this.agencia="";
+    }
+
     depositoCuenta(valor){
-       this.saldo += valor
+        
+        if (valor > 0)
+            this.#saldo += valor;
+
+        return this.#saldo
+
+    }
+
+    retirarCuenta(valor){
+        if (valor <= this.#saldo)
+        this.#saldo -= valor;
+
+        return this.#saldo;
+    }
+
+    consultarSaldo (){
+       return this.#saldo; 
     }
 
 }
 
-const cliente = new Clientes();
-const cuenta = new cuentaCorriente();
+const cuentaCliente = new cuentaCorriente ();
+// cuentaCliente.saldo=0;
+let saldo = cuentaCliente.consultarSaldo();
+console.log('El saldo actual es '+saldo);
 
-cliente.nombreCliente = "Leonardo";
-cliente.dniCliente = "1240003332";
-cliente.rutCliente="34234234";
-cuenta.numero = "1235132536123";
-cuenta.saldo= 1000;
-cuenta.agencia="hey";
 
-console.log(cliente);
-console.log(cuenta.saldo);
-cuenta.depositoCuenta(100);
-console.log (cuenta.saldo);
+saldo = cuentaCliente.depositoCuenta(100);
+console.log("El saldo actual es " + saldo);
+
+
+saldo = cuentaCliente.retirarCuenta(50);
+console.log("El saldo actual es " + saldo); 
