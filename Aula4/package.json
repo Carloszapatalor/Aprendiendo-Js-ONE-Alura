@@ -1,0 +1,24 @@
+{
+  "name": "cuentasbanco",
+  "version": "1.0.0",
+  "description": "Uso de clases para la gestión de cuentas corrientes para un banco",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvilZeth/Aprendiendo-Js-ONE-Alura.git"
+  },
+  "keywords": [
+    "js",
+    "json"
+  ],
+  "author": "Curso Alura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvilZeth/Aprendiendo-Js-ONE-Alura/issues"
+  },
+  "homepage": "https://github.com/EvilZeth/Aprendiendo-Js-ONE-Alura#readme",
+  "type": "module"
+}
