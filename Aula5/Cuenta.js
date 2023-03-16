@@ -3,6 +3,10 @@ class Cuenta {
   #saldo;
 
   constructor(cliente, numero, agencia, saldo) {
+    
+    if (this.constructor == Cuenta){
+      throw new Error ("No se puedes instanciar objetos de la clase Cuenta");
+    } 
     this.numero = numero;
     this.agencia = agencia;
     this.#cliente = cliente;
