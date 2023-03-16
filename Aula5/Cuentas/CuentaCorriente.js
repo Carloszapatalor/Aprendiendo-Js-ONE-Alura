@@ -1,6 +1,6 @@
 import Cuenta from "./Cuenta.js";
 
-class CuentaCorriente extends Cuenta {
+export class CuentaCorriente extends Cuenta {
   static cantidadCuentas = 0;
 
   constructor(cliente, numero, agencia) {
