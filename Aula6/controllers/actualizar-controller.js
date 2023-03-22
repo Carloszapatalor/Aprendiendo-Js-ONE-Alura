@@ -32,6 +32,7 @@ formulario.addEventListener("submit", (evento) => {
 
   const nombre = document.querySelector("[data-nombre]").value;
   const email = document.querySelector("[data-email]").value;
-  
-  clientServices.editarCliente(nombre, email, id);
+  clientServices.editarCliente(nombre, email, id).then (() =>{
+     window.location.href = "./edicion_concluida.html";
+  })
 });
